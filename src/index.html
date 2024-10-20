@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="ru" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="fonts/jost-v15-cyrillic_latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/jost-v15-cyrillic_latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <style>
+      @font-face {
+        font-display: swap;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        src: url('fonts/jost-v15-cyrillic_latin-regular.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 500;
+        src: url('fonts/jost-v15-cyrillic_latin-500.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        src: url('fonts/jost-v15-cyrillic_latin-600.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 700;
+        src: url('fonts/jost-v15-cyrillic_latin-700.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 300;
+        src: url('fonts/Jost-Light.woff2') format('woff2');
+      }
+
+      .backdrop-blur-1px {
+        -webkit-backdrop-filter: blur(1px);
+                backdrop-filter: blur(1px);
+        transform: translate3d(0px, -2px, 1px);
+      }
+
+      .backdrop-blur-1px-small {
+        -webkit-backdrop-filter: blur(1px);
+                backdrop-filter: blur(1px);
+      }
+    </style>
+    <title>Гэрб</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body id="start-page" class="antialiased bg-burgundy text-white relative overflow-x-hidden pt-[100px]">
+    <div class="fixed z-[100] top-0 left-0 right-0 mt-10">
+      <div class="max-w-[1010px] mx-auto limit-1-full drop-shadow-lg">
+        <nav class="menu relative">
+          <ul class="menu__list flex gap-1 items-center justify-between text-brown font-bold">
+            <li>
+              <button
+                class="js-click-menu inline-flex md:hidden menu__link menu__link--active items-center justify-center transition-colors"
+              >
+                Меню
+              </button>
+            </li>
+
+            <li>
+              <a
+                class="js-link js-ga4-link hidden md:inline-flex menu__link menu__link--first menu__link--active items-center justify-center transition-colors"
+                href="#start-page" data-gatitle="Главная"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a
+                class="js-link js-ga4-link hidden md:inline-flex menu__link items-center justify-center transition-colors"
+                href="#page-spec" data-gatitle="Актуальная информация для клинической практики+"
+                >Актуальная информация для клинической практики</a
+              >
+            </li>
+            <li>
+              <a
+                class="js-link js-ga4-link hidden md:inline-flex menu__link items-center justify-center transition-colors"
+                href="#quest-page" data-gatitle="Статьи"
+                >Статьи</a
+              >
+            </li>
+            <li>
+              <a
+                class="js-link js-ga4-link hidden md:inline-flex menu__link items-center justify-center transition-colors"
+                href="#video-page" data-gatitle="Видео"
+                >Видео</a
+              >
+            </li>
+
+            <li class="block md:hidden">
+              <button class="js-click-menu hamburger hamburger--vortex" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <footer class="nav-mobile block sm:hidden absolute inset-x-0 transition-opacity">
+          <ul class="space-y-2 text-brown font-medium">
+            <li>
+              <a
+                href="#start-page" data-gatitle="Главная"
+                class="js-link-mobile js-ga4-link px-2 py-1 inline-flex nav-mobile__item nav-mobile__item--first nav-mobile__item--active"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a href="#page-spec" class="js-link-mobile js-ga4-link px-2 py-1 inline-flex nav-mobile__item" data-gatitle="Актуальная информация для клинической практики"
+                >Актуальная информация для клинической практики</a
+              >
+            </li>
+            <li><a href="#quest-page" class="js-link-mobile js-ga4-link px-2 py-1 inline-flex nav-mobile__item" data-gatitle="Статьи">Статьи</a></li>
+            <li><a href="#video-page" class="js-link-mobile js-ga4-link px-2 py-1 inline-flex nav-mobile__item" data-gatitle="Видео">Видео</a></li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 z-[1]">
+      <img class="w-full" src="images/inset-1.png" alt="" />
+    </div>
+
+    <div class="js-fixed-scale relative z-[61]">
+      <div class="limit-1">
+        
+        <div class="mt-10 xl:mt-20 logo-list flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-20">
+          <div class="shrink-0 relative">
+            <div class="absolute inset-0 bg-violet hidden sm:block blur-[100px]"></div>
+            <video class="relative logo" autoplay loop muted playsinline disablepictureinpicture>
+              <source src="images/gerb_chrome.webm" type="video/webm" />
+              <source src="images/gerb_safari.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="lg:mt-4 shrink-0">
+            <div class="logo-text text-center lg:text-left text-4xl sm:text-[44px]">
+              Меняем <br />
+              парадигму терапии
+            </div>
+          </div>
+        </div>
+        <div class="title-top flex text-center justify-center">
+          <div class="title-top__wrp flex flex-col items-center mt-[120px] sm:mt-16 2xl:mt-24">
+            <h2
+              class="title-top__head font-bold text-2xl sm:text-3xl lg:text-[3vw] leading-tight xl:leading-[53px] xl:text-[50px]"
+            >
+              Нерешенные проблемы <br />
+              в лечении ГЭРБ
+            </h2>
+
+            <p class="title-top__descr">
+              Глобальной проблемой ведения больных ГЭРБ остается клиническая и/или эндоскопическая рефрактерность части
+              пациентов к стандартной терапии с применением ингибиторов протонной помпы (ИПП).
+            </p>
+            <div class="title-top__border flex justify-center">
+              <div class="border-element">
+                <p>Остаются нерешенными проблемы:</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-wrapper-adv" class="relative">
+      <div class="absolute block sm:hidden opacity-0">
+        <img decoding="async" loading="lazy" src="images/cloud-test1.png" alt="" />
+        <img decoding="async" loading="lazy" src="images/cloud-test1.png" alt="" />
+      </div>
+    </div>
+
+    <div
+      class="js-fixed-scale absolute inset-x-0 top-[-6vw] lg:top-[-170px] flex justify-center items-center overflow-hidden sm:overflow-visible"
+    >
+      <div class="absolute inset-0 hidden lg:flex items-end max-w-[1440px] mx-auto">
+        <div class="w-full h-[500px] bg-violet blur-[250px] mb-10"></div>
+      </div>
+      <div class="relative">
+        <img class="w-[550px] max-w-none sm:w-auto sm:max-w-full" src="images/full_lines.png" alt="" />
+        <div id="desktop-wrapper-adv"></div>
+        <div id="wrapper-adv" class="limit-1 relative z-[60] ml:absolute ml:inset-0 ml:flex ml:items-end">
+          <div class="mt-6 ml:mt-0 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div
+              class="relative ml:top-[-5.208vw] xl:top-[-100px] flex flex-col ml:justify-center items-center text-center"
+            >
+              <img class="adv__img" src="images/block1.png" alt="" />
+              <div class="adv__body">
+                <h3 class="adv__title">Желчный рефлюкс</h3>
+                <p class="adv__text">(смешанный: кислотный + желчный)</p>
+              </div>
+            </div>
+            <div
+              class="relative ml:top-[7.239vw] xl:top-[43px] flex flex-col ml:justify-center items-center text-center"
+            >
+              <div class="relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <img
+                    class="absolute adv__img-certain transition-opacity duration-1000 opacity-0"
+                    src="images/block2.png"
+                    alt=""
+                  />
+                 
+                </div>
+                <img class="adv__img" src="images/block2.png" alt="" />
+              </div>
+              <div class="adv__body">
+                <h3 class="adv__title">Высокий рефлюкс</h3>
+                <p class="adv__text ml:truncate">(ЛФР*— внепищеводные проявления ГЭРБ)</p>
+                <br>
+                <p class="adv__text-light">*ларингофарингеальный рефлюкс</p>
+              </div>
+            </div>
+            <div
+              class="relative ml:top-[-2.864vw] xl:top-[-55px] flex flex-col ml:justify-center items-center text-center"
+            >
+              <img class="adv__img" src="images/block3.png" alt="" />
+              <div class="adv__body">
+                <h3 class="adv__title">Контроль рецидивов ГЭРБ</h3>
+                <p class="adv__text">(снижение частоты рецидивов и улучшение качества жизни пациентов)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="js-fixed-scale relative z-50">
+      <!-- relative z-50 mt-20 ml:mt-[45vw] xl:mt-[40vw] 2xl:mt-[40rem] -->
+      <div class="relative z-50 mt-20 ml:mt-[45vw] xl:mt-[40vw] 2xl:mt-[30rem]">
+        <div class="max-w-[1744px] mx-auto px-2 sm:px-9 lg:px-[64px] relative">
+          <div class="text-brown md:-skew-x-3 2xl:skew-x-[-8deg] overflow-x-hidden">
+            <div class="bg-white rounded-t-3xl pt-8 sm:pt-14 px-4 sm:px-10 xl:px-6 pb-4">
+              <div class="md:skew-x-3 2xl:skew-x-[8deg]">
+                <h2 class="text-2xl sm:text-3xl xl:text-4xl 2xl:text-[50px] font-bold !leading-none text-center">
+                  Во многих случаях <br />
+                  рефрактерность может быть обусловлена:
+                </h2>
+                <div
+                  class="mt-10 lg:mt-[70px] max-w-[1350px] mx-auto sm:px-2 grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-10 2xl:gap-24"
+                >
+                  <div class="flex flex-col items-start">
+                    <p class="text-left text-base xl:text-xl font-bold pb-6">
+                      Неспособностью ИПП уменьшать негативное воздействие других компонентов рефлюктата, помимо соляной
+                      кислоты (пепсин, желчь)
+                    </p>
+                    <div class="mt-auto mx-auto relative">
+                      <img decoding="async" src="images/line1-img1.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start">
+                    <p class="text-left text-base xl:text-xl font-bold pb-6">
+                      Отсутствием у ИПП свойств восстанавливать нарушенную барьерную функцию слизистой оболочки
+                      пищевода, что является характерной чертой при различных фенотипах ГЭРБ
+                    </p>
+                    <div class="mt-auto mx-auto relative">
+
+                      <img decoding="async" src="images/line1-img22.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-start">
+                    <p class="text-left text-base xl:text-xl font-bold pb-6">
+                      Длительным периодом восстановления слизистой при монотерапии ИПП, что может приводить к
+                      преждевременному прекращению терапии
+                    </p>
+                    <div class="mt-auto mx-auto relative">
+                      <img decoding="async" src="images/line1-img3.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="backdrop-blur-1px-small bg-yellow rounded-b-3xl relative">
+              <div class="md:skew-x-3 2xl:skew-x-[8deg] flex justify-center">
+
+                <p
+                  class="level2-descr text-lg sm:text-xl xl:text-2xl 2xl:text-[30px] leading-none font-bold text-center py-5 px-5 sm:py-9 sm:px-10 xl:px-3 max-w-[1340px]"
+                >
+                  Таким образом, оптимальная терапия должна быть направлена не только на подавление секреции соляной
+                  кислоты, но и на указанные выше патофизиологические механизмы.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-16 sm:pt-[130px] relative">
+      <div class="js-fixed-scale">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-5 lg:gap-10 relative px-4"
+        >
+
+          <div class="absolute right-0">
+            <img decoding="async" src="images/test-bubls.png" alt="" />
+          </div>
+          <div class="absolute inset-0 blur-[250px] bg-violet"></div>
+
+          <div class="font-bold xl:w-[630px] relative z-10">
+            <h2 class="text-[24px] md:text-[36px] lg:text-[50px] leading-none">У врачей могут возникнуть сложности</h2>
+            <p class="mt-4 text-lg md:text-xl">
+              с дифференциальной диагностикой ГЭРБ, так как заболевание может проявлять себя внепищеводными симптомами,
+              «маскируясь» под другие патологии. Поэтому настороже надо быть не только гастроэнтерологам и терапевтам,
+              но и оториноларингологам и даже стоматологам.
+            </p>
+          </div>
+          <div class="shrink-0 relative z-10">
+
+            <div class="relative">
+              <div
+                class="absolute right-3 top-8 xl:top-12 w-20 h-20 lg:w-[103px] lg:h-[103px] rounded-full border-4 border-pinki bg-white flex items-center justify-center"
+              >
+                <svg
+                  class="opacity-animation transition-opacity h-12 lg:h-[60px]"
+                  viewBox="0 0 16 60"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M.396.6H15.73l-2.624 38.458H3.102L.396.6Zm0 52.316c0-2.077.71-3.772 2.132-5.084 1.476-1.312 3.335-1.968 5.576-1.968 2.241 0 4.073.656 5.494 1.968 1.476 1.312 2.214 3.007 2.214 5.084 0 2.077-.738 3.772-2.214 5.084-1.421 1.312-3.253 1.968-5.494 1.968-2.241 0-4.1-.656-5.576-1.968C1.107 56.688.396 54.993.396 52.916Z"
+                    fill="#E45772"
+                  />
+                </svg>
+              </div>
+              <img
+                decoding="async"
+                class="w-[350px] lg:w-[400px] xl:w-auto"
+                src="images/person.png"
+                width="483"
+                height="486"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 js-fixed-scale">
+      <div class="mt-20 md:mt-[180px] max-w-[1370px] px-5 sm:px-14 mx-auto">
+        <button class="js-ga4-link js-table-btn w-full" data-gatitle="Внепищеводные проявления ГЭРБ">
+          <div class="-skew-x-3 sm:skew-x-[-20deg] bg-yellow rounded-3xl">
+            <div
+              class="skew-x-3 sm:skew-x-[20deg] p-6 flex flex-col sm:flex-row gap-3 items-center justify-center sm:justify-between"
+            >
+              <p
+                class="sm:ml-6 md:ml-14 text-[26px] sm:text-[32px] xl:text-[50px] leading-none text-brown font-bold text-center sm:text-left"
+              >
+                Внепищеводные проявления ГЭРБ <sup>5</sup>
+              </p>
+              <div class="js-wrapper-img-parent animate-bounce-custom mt-2 sm:mt-0 shrink-0 sm:mr-10 md:mr-14">
+                <img
+                  decoding="async"
+                  class="js-wrapper-img transition-transform drop-shadow-2xl"
+                  src="images/bottom-btn2.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="relative lg:-mt-12">
+      <div class="js-fixed-scale">
+        <div class="js-block-table hidden mt-12 max-w-[1250px] mx-auto px-4 text-brown relative">
+
+          <div
+            class="content-visibility flex overflow-x-auto rounded-[34px] sm:rounded-[68px] bg-www p-5 relative z-10"
+          >
+            <div class="rounded-[28px] sm:rounded-[56px] bg-white p-4">
+              <div class="p-1 text-brown">
+                <table class="w-full md:table-fixed">
+                  <thead class="bg-pinki2 text-[13px] sm:text-[18px] lg:text-[28px] leading-tight">
+                    <tr class="divide-x-2 divide-white">
+                      <th class="rounded-tl-[20px] sm:rounded-tl-[40px]">
+                        <div
+                          class="p-3 lg:p-5 font-bold text-white flex flex-col md:flex-row items-center text-center md:text-left gap-1"
+                        >
+                          <svg
+                            class="shrink-0"
+                            width="39"
+                            height="39"
+                            viewBox="0 0 39 39"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g stroke="#fff" stroke-width="2">
+                              <path
+                                d="m21.125 14.659 4.063-2.346c.251-.145.532-.218.812-.218m-4.875 11.56L25.188 26c.251.145.532.218.812.218m8.125-11.593-1.943 1.13m1.943 7.807L32.22 22.47m-.038-6.715a1.625 1.625 0 0 0-.661-.724l-4.708-2.718a1.624 1.624 0 0 0-.813-.218m6.182 3.66c.098.211.151.443.151.684v5.436c0 .207-.04.408-.113.595m0 0a1.625 1.625 0 0 1-.7.812L26.814 26a1.625 1.625 0 0 1-.813.218m0-17.28v3.157m0 17.155v-3.032M17.708 14.659l-4.062-2.346a1.623 1.623 0 0 0-.646-.209m4.708 11.55L13.646 26a1.626 1.626 0 0 1-.646.21M4.875 14.624l1.832 1.02m-1.832 7.918 1.79-.977m.042-6.941c.14-.251.348-.465.606-.614l4.708-2.718c.3-.174.644-.244.98-.209m-6.294 3.54a1.624 1.624 0 0 0-.207.795v5.436c0 .25.058.493.164.711m0 0c.14.287.363.531.649.696L12.02 26c.3.174.644.244.98.21m0-17.273v3.167m0 17.146v-3.04M19.5 16.25v5.688"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M14.625 7.313a1.625 1.625 0 1 1-3.25 0 1.625 1.625 0 0 1 3.25 0ZM14.625 30.875a1.625 1.625 0 1 1-3.25 0 1.625 1.625 0 0 1 3.25 0ZM27.625 7.313a1.625 1.625 0 1 1-3.25 0 1.625 1.625 0 0 1 3.25 0ZM27.625 30.875a1.625 1.625 0 1 1-3.25 0 1.625 1.625 0 0 1 3.25 0Z"
+                              />
+                            </g>
+                          </svg>
+                          Синдром
+                        </div>
+                      </th>
+                      <th>
+                        <div
+                          class="p-3 lg:p-5 font-bold text-white flex flex-col md:flex-row items-center text-center md:text-left gap-1"
+                        >
+                          <svg
+                            class="shrink-0"
+                            width="45"
+                            height="45"
+                            viewBox="0 0 45 45"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g stroke="#fff" stroke-width="2" stroke-linecap="round">
+                              <path
+                                d="M22.5 19.688c8.276 0 13.2-7.187 14.02-6.606.02.014.008.043-.017.043H8.515c-.028 0-.037-.03-.01-.038.946-.293 5.775 6.6 13.995 6.6Zm0 0v.937m0 17.813H30m-7.5 0H15m7.5 0v-3.75m0-9.376V30M17.813 34.688c.938-2.813 9.375-1.876 9.375-4.688 0-.92-.883-1.414-2.173-1.716M21.759 7.5h-1.927a.2.2 0 0 0-.19.137l-.86 2.58a.05.05 0 0 0 .063.064l2.596-.865a.2.2 0 0 0 .135-.17L21.76 7.5Zm0 0c3.431-2.293 7.405-.404 9.179 2.56M19.815 27.656c-2.566-.272-3.877-1.406-3.877-2.343 0-2.735 11.347-1.938 13.828-4.405"
+                              />
+                            </g>
+                          </svg>
+                          Клинические проявления
+                        </div>
+                      </th>
+                      <th class="rounded-tr-[20px] sm:rounded-tr-[40px]">
+                        <div
+                          class="p-3 lg:p-5 font-bold text-white flex flex-col md:flex-row text-center md:text-left items-center gap-1"
+                        >
+                          <svg
+                            class="shrink-0"
+                            width="49"
+                            height="49"
+                            viewBox="0 0 49 49"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11.556 22.247c-.913-5.391-.23-12.915 5.329-15.68a16.64 16.64 0 0 1 7.58-1.463c7.927.345 15.78 6.535 11.387 15.02l-.142.427M19.396 38.79a9.146 9.146 0 0 1 1.613 4.635m10.734-20.661a2.327 2.327 0 0 1 0-1.348c.17-.382.437-.713.776-.96a2.573 2.573 0 0 1 3.19.094m0 0c.295.247.53.557.689.907a4.35 4.35 0 0 1 0 3.43c-.245.49-.613.878-.899 1.347-.47.776-.633 1.715-1.061 2.532a1.633 1.633 0 0 1-.654.735c-.245.124-.526.16-.796.102m0 0a1.632 1.632 0 0 1-1.327-1.47m1.327 1.47s-.199.348-.199.878a8.044 8.044 0 0 0 1.92 5.247M29.073 22.275c-1.13 1.587-2.82 2.788-4.71 3.282m5.466 4.558c-.612.985-2.082 2.552-3.364 2.552m-2.102-7.11c-.318-.407-.803-.695-1.435-.791-1.899-.51-3.879-.225-5.798-.51-1.817-.272-2.266-1.798-3.859-1.798-1.02 0-2.915.637-2.96 1.144-.607 4.745.004 13.28 5.594 15.19 1.737.593 3.525-.032 5.104-.817 1.944-.854 5.39-2.563 5.533-5.043a.594.594 0 0 0-.077-.265m-2.102-7.11c.429.55.553 1.318.321 2.128-.213 1.102-.969 3.365.367 4.002.38.19 1.165.524 1.414.98"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-miterlimit="10"
+                              stroke-linecap="round"
+                            />
+                            <path
+                              d="M10.964 26.215a15.026 15.026 0 0 0 10.474 1.348M11.23 29.604a15.026 15.026 0 0 0 10.473 1.348M11.985 33.755a10.633 10.633 0 0 0 7.411.953"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-miterlimit="10"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                          Заболевания-маски
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y-2 divide-white">
+                    <tr class="divide-x-2 divide-white text-[12px] sm:text-base lg:text-[20px] leading-tight">
+                      <td class="align-top bg-gray-1 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        <p class="xl:ml-12">Легочный</p>
+                      </td>
+                      <td class="align-top bg-gray-2 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold font-22">
+                        Хронический кашель, приступы удушья
+                      </td>
+                      <td class="align-top bg-gray-3 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        Бронхиальная астма, хронический бронхит, идиопатический пневмофиброз, рецидивирующая пневмония
+                      </td>
+                    </tr>
+                    <tr class="divide-x-2 divide-white text-[12px] sm:text-base lg:text-[20px] leading-tight">
+                      <td class="align-top bg-gray-1 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        <p class="xl:ml-12">Кардиальный</p>
+                      </td>
+                      <td class="align-top bg-gray-2 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold font-22">
+                        Боли за грудиной, нарушение ритма сердца
+                      </td>
+                      <td class="align-top bg-gray-3 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        Стенокардия, аритмии
+                      </td>
+                    </tr>
+                    <tr class="divide-x-2 divide-white text-[12px] sm:text-base lg:text-[20px] leading-tight">
+                      <td class="align-top bg-gray-1 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        <p class="xl:ml-12 color-pinki">Оториноларингоф <br />арингеальный</p>
+                      </td>
+                      <td class="align-top bg-gray-2 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold font-22">
+                        Охриплость, срывы голоса, боли в горле, шее, избыточное слизеобразование в
+                        гортани,гиперсаливация, ощущение кома в горле
+                      </td>
+                      <td class="align-top bg-gray-3 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        Хронические ларингит, фарингит, ринит, синусит, отит
+                      </td>
+                    </tr>
+                    <tr class="divide-x-2 divide-white text-[12px] sm:text-base lg:text-[20px] leading-tight">
+                      <td class="align-top bg-gray-1 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        <p class="xl:ml-12">Стоматологический</p>
+                      </td>
+                      <td class="align-middle text-center bg-gray-2 px-3 md:px-5 py-5 lg:py-9 font-bold">
+                        <div class="max-w-[280px] w-full inline-block h-1 sm:h-2 rounded-xl bg-white"></div>
+                      </td>
+                      <td class="align-top bg-gray-3 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        Кариес, пародонтоз, афтозный стоматит
+                      </td>
+                    </tr>
+
+                    <tr class="divide-x-2 divide-white text-[12px] sm:text-base lg:text-[20px] leading-tight">
+                      <td class="align-top bg-gray-1 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold">
+                        <p class="xl:ml-12">Орофациальный</p>
+                      </td>
+                      <td class="align-top bg-gray-2 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold font-22">
+                        Поражение красной каймы губ, слизистой оболочки полости рта, языка, пародонта
+                      </td>
+                      <td class="align-middle text-center bg-gray-3 px-3 md:px-5 py-5 lg:py-9 font-bold">
+                        <div class="max-w-[280px] w-full inline-block h-1 sm:h-2 rounded-xl bg-white"></div>
+                      </td>
+                    </tr>
+
+                    <tr class="divide-x-2 divide-white text-[12px] sm:text-base lg:text-[20px] leading-tight">
+                      <td
+                        class="rounded-bl-[20px] sm:rounded-bl-[40px] align-top bg-gray-1 px-3 md:px-5 py-5 lg:py-9 font-bold"
+                      >
+                        <p class="xl:ml-12">Анемический</p>
+                      </td>
+                      <td class="align-top bg-gray-2 px-3 py-3 md:px-5 sm:py-5 lg:py-9 font-bold font-22">
+                        Гипохромная железодефицитная анемия
+                      </td>
+                      <td
+                        class="rounded-br-[20px] sm:rounded-br-[40px] align-middle text-center bg-gray-3 px-3 md:px-5 py-5 lg:py-9 font-bold"
+                      >
+                        <div class="max-w-[280px] w-full inline-block h-1 sm:h-2 rounded-xl bg-white"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- max-w-[1900px] ml-auto mr-auto  -->
+    <div class="mt-20 lg:mt-[180px] relative text-[18px] lg:text-[25px] 2xl:text-[30px] leading-tight md:leading-none">
+      <div class="absolute inset-0 bg-violet blur-[250px]"></div>
+      <div
+        class="relative skew-x-3 sm:skew-x-12 mr-8 ml-8 lg:ml-28 lg:mr-28 pl-4 rounded-l-[38px] bg-gradient-transaprent"
+      >
+        <div
+          class="-skew-x-3 sm:-skew-x-12 pl-6 lg:pl-[435px] pr-1 sm:pr-10 xl:pr-[9vw] 2xl:pr-[22.5vw] font-bold pt-10 lg:pt-14 pb-8 mx-auto"
+        >
+          <span class="text-yellow2">«Золотым стандартом»</span> лечения ГЭРБ принято считать терапию ИПП <sup>2</sup>. Но они
+          действуют только в желудке, хотя источник симптомов — повреждение в пищеводе.
+        </div>
+      </div>
+
+      <div class="hidden lg:block absolute -top-5 2xl:top-[-80px] left-32 -z-10">
+        <img decoding="async" src="images/water-bubbles-circle.png" alt="" />
+      </div>
+
+      <div
+        class="flex lg:block justify-center items-center px-2 lg:px-0 my-3 lg:my-0 relative lg:absolute lg:top-[-80px] xl:-top-5 2xl:top-[-80px] lg:left-44 z-10"
+      >
+        <div class="ml-[50px] inset-0 absolute flex items-center justify-center z-20">
+          <span class="absolute flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pinki opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-pinki"></span>
+          </span>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-4 flex rotate-animation z-[1]">
+            <img decoding="async" src="images/cirlcle-lines-elipsips.png" alt="" />
+          </div>
+          <img decoding="async" src="images/cirlcle-lines-person2.png" alt="" />
+        </div>
+      </div>
+
+      <div
+        class="relative -skew-x-3 sm:-skew-x-12 mr-8 ml-8 lg:mr-28 lg:ml-28 pr-4 rounded-r-[38px] bg-gradient-transaprent2"
+      >
+        <div
+          class="skew-x-3 sm:skew-x-12 pl-6 sm:pl-12 pr-6 lg:pl-[200px] xl:pl-[450px] lg:pr-[7vw] 2xl:pr-[13vw] font-bold pt-7 pb-8 mx-auto flex gap-4"
+        >
+          <svg
+            class="shrink-0"
+            width="34"
+            height="35"
+            viewBox="0 0 34 35"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="17" cy="17" r="16" fill="#fff" stroke="#E45772" stroke-width="2" />
+            <path
+              d="M14.872 8.2h4.488l-.768 11.256h-2.928L14.872 8.2Zm0 15.312c0-.608.208-1.104.624-1.488.432-.384.976-.576 1.632-.576.656 0 1.192.192 1.608.576.432.384.648.88.648 1.488s-.216 1.104-.648 1.488c-.416.384-.952.576-1.608.576-.656 0-1.2-.192-1.632-.576-.416-.384-.624-.88-.624-1.488Z"
+              fill="#E45772"
+            />
+          </svg>
+          <p>
+            ИПП не защищают слизистую пищевода от желчи и ферментов и не способствуют
+            <span class="block">ее восстановлению.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-[70px] lg:mt-[146px] relative">
+      <div class="js-fixed-scale">
+        <div class="max-w-[1800px] mx-auto px-2 sm:px-9 lg:px-[140px]">
+          <div
+            class="text-brown md:-skew-x-3 mxl:skew-x-[-10deg] bg-yellow rounded-3xl pt-10 pb-8 sm:pt-14 px-5 sm:px-10 xl:px-6"
+          >
+            <!-- md:px-5 -->
+            <div class="md:skew-x-3 mxl:skew-x-[10deg] xl:px-14 md:mx-9">
+              <div class="max-w-[1220px] md:px-2 mx-auto relative">
+                <div class="md:pr-[38%] lg:pr-[37%]">
+                  <h2 class="text-2xl lg:text-3xl xl:text-4xl mxl:text-[40px] font-bold !leading-none max-w-[755px]">
+                    Поэтому неотъемлемым компонентом в лечении ГЭРБ является эзофагопротектор Альфазокс
+                  </h2>
+                  <p class="mt-4 font-medium text-[20px] md:text-[26px] xl:text-[30px] !leading-none max-w-[760px]">
+                    Натуральные вещества: гиалуроновая кислота+хондроитина сульфат, в комбинации
+                    с биодгезивным носителем полоксамер 407
+                  </p>
+                </div>
+
+                <div class="mt-5 md:mt-0 md:w-[40%] mxl:w-1/2 md:absolute right-0 mxl:-right-24 top-0 mxl:-top-40">
+
+                  <img decoding="async" class="hidden md:block" src="images/preparat4.png" alt="" />
+                  <img decoding="async" class="block md:hidden" src="images/preparat-mobile1.png" alt="" />
+                </div>
+
+                <div class="mt-10 bg-white -skew-x-12 py-5 px-10 max-w-[360px] rounded-xl">
+                  <p class="skew-x-12 text-[20px] lg:text-[30px] !leading-none text-brown font-bold">
+                    Единственный эзофагопротектор
+                  </p>
+                </div>
+
+                <div
+                  class="mt-10 md:mt-20 bg-gradient-transaprent3 -skew-x-3 md:-skew-x-12 rounded-r-3xl max-w-[900px]"
+                >
+                  <div class="skew-x-3 md:skew-x-12 py-3 md:py-16 relative">
+                    <div class="md:absolute top-[-50px]">
+                      <img decoding="async" class="mx-auto block" src="images/prize.png" alt="" />
+                    </div>
+
+                    <p
+                      class="mt-5 md:mt-0 px-5 md:ml-[200px] lg:ml-[230px] text-[20px] lg:text-[30px] !leading-none font-medium text-center md:text-left"
+                    >
+                      Обладатель номинации <br />
+                      «За смену парадигмы в лечении ГЭРБ» <sup>4</sup>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="js-fixed-scale">
+        <div class="mt-[60px] sm:mt-[120px] max-w-[1325px] mx-auto p-3">
+          <div class="flex flex-col sm:flex-row gap-6 items-center">
+            <div class="shrink-0 relative">
+              <div class="absolute inset-0 bg-violet blur-[30px]"></div>
+              <svg
+                class="relative"
+                width="108"
+                height="108"
+                viewBox="0 0 108 108"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M96.75 54c0 24.853-17.897 42.75-42.75 42.75S11.25 78.853 11.25 54 29.147 11.25 54 11.25 96.75 29.147 96.75 54Z"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+                <path
+                  d="M45.99 34.972c-.428 1.034-.428 2.345-.428 4.965v5.566c0 .028 0 .042-.008.05-.01.01-.023.01-.052.01h-5.565c-2.62 0-3.93 0-4.965.428a5.625 5.625 0 0 0-3.044 3.044C31.5 50.069 31.5 51.379 31.5 54c0 2.62 0 3.931.428 4.965a5.625 5.625 0 0 0 3.044 3.044c1.034.428 2.345.428 4.965.428h5.566c.028 0 .042 0 .05.01.01.008.01.022.01.05v5.566c0 2.62 0 3.93.428 4.965a5.625 5.625 0 0 0 3.044 3.044c1.034.428 2.344.428 4.965.428 2.62 0 3.931 0 4.965-.428a5.625 5.625 0 0 0 3.044-3.044c.428-1.034.428-2.345.428-4.966v-5.564c0-.029 0-.043.01-.052.008-.008.022-.008.05-.008h5.566c2.62 0 3.93 0 4.965-.429a5.625 5.625 0 0 0 3.044-3.044c.428-1.034.428-2.344.428-4.965 0-2.62 0-3.931-.428-4.965a5.625 5.625 0 0 0-3.044-3.044c-1.034-.428-2.345-.428-4.966-.428h-5.564c-.029 0-.043 0-.052-.01-.008-.008-.008-.022-.008-.05v-5.566c0-2.62 0-3.93-.429-4.965a5.625 5.625 0 0 0-3.044-3.044C57.931 31.5 56.621 31.5 54 31.5c-2.62 0-3.931 0-4.965.428a5.625 5.625 0 0 0-3.044 3.044Z"
+                  fill="#fff"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+
+            <p class="text-[20px] sm:text-[30px] leading-tight font-medium">
+              Подключение Альфазокса к терапии ИПП позволяло повысить эффективность терапии ГЭРБ, сократить срок
+              терапии, а также улучшить частоту симптоматического, эндоскопического и гистологического ответа на
+              лечение.
+            </p>
+          </div>
+
+          <div class="mx-5 mt-10 sm:mt-[80px] bg-white -skew-x-12 py-9 px-10 md:px-20 max-w-[624px] rounded-3xl">
+            <p class="skew-x-12 text-[20px] sm:text-[28px] lg:text-[40px] !leading-none text-brown font-bold">
+              Комбинированная <br />
+              терапия способствует:
+            </p>
+          </div>
+
+          <div class="mt-14 sm:mt-[100px] sm:px-7">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+              <div class="flex flex-col-reverse sm:flex-row items-center gap-3">
+                <div class="shrink-0 relative">
+                  <div class="absolute inset-0 blur-[50px] bg-violet"></div>
+                  <div class="absolute -inset-6 flex rotate-animation z-[1]">
+                    <img decoding="async" src="images/hals_ellipse.png" alt="" />
+                  </div>
+                  <img decoding="async" class="relative z-[1]" src="images/circle-11.png" alt="" />
+                </div>
+                <p
+                  class="mb-10 sm:mb-0 sm:ml-8 text-[20px] sm:text-[30px] lg:text-[20px] xl:text-[30px] font-bold text-white leading-none"
+                >
+                  Повышению эффективности лечения пациентов с различными фенотипами заболевания
+                </p>
+              </div>
+
+              <div class="flex flex-col-reverse sm:flex-row items-center gap-3">
+                <div class="shrink-0 relative">
+                  <div class="absolute inset-0 blur-[50px] bg-violet"></div>
+                  <div class="absolute -inset-6 flex rotate-animation z-[1]">
+                    <img decoding="async" src="images/hals_ellipse.png" alt="" />
+                  </div>
+                  <img decoding="async" class="relative z-[1]" src="images/circle-22.png" alt="" />
+                </div>
+                <p
+                  class="mb-10 sm:mb-0 sm:ml-8 text-[20px] sm:text-[30px] lg:text-[20px] xl:text-[30px] font-bold text-white leading-none"
+                >
+                  Регрессу как пищеводной, так и экстраэзофагеальной симптоматики
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- sm:px-[60px] -->
+          <div class="px-2 sm:px-[25px] mt-20 sm:mt-[110px] relative z-10">
+
+            <div class="bg-yellow text-brown -skew-x-3 sm:-skew-x-12 py-8 sm:py-14 px-1 sm:px-10 md:px-16 rounded-3xl">
+              <p
+                class="backdrop-blur-1px-small mx-5 skew-x-3 sm:skew-x-12 text-[20px] sm:text-[24px] lg:text-[30px] !leading-none text-brown font-medium"
+              >
+                Синергетический эффект Альфазокса в сочетании с ИПП уменьшает <nobr>тяжесть и частоту</nobr> экстраэзофагеальных симптомов у пациентов с ГЭРБ в большей степени, чем монотерапия ИПП.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-20 sd:mt-[100px] relative">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 xl:flex flex-row items-center justify-center relative">
+              <div class="absolute inset-0 blur-[250px] bg-violet"></div>
+
+              <div class="lg:col-span-3 relative xl:absolute xl:top-0 xl:left-[3vw]">
+                <p class="text-[32px] md:text-[40px] leading-none font-bold">
+                  Альфазокс
+                  <span class="inline xl:block">оказывает:</span>
+                </p>
+              </div>
+
+              <div class="relative xl:absolute xl:bottom-[9vw] sxl:bottom-[175px] xl:left-[56px]">
+                <p class="text-[16px] sm:text-[20px] leading-tight level2-descr xl:w-[336px] font-bold">
+                  Заживляющее и восстанавливающее действие по отношению к эпителию пищевода
+                </p>
+                <img decoding="async" class="hidden xl:block" src="images/line1.svg" alt="" />
+              </div>
+
+              <div class="relative sm:w-[530px] lg:w-auto">
+                <div class="mb mr-55 absolute inset-0 flex items-center justify-center z-20">
+                  <div class="text-animation-1 text-[60px] xl:text-[86px] leading-none text-green font-medium">+</div>
+                </div>
+                <div class="mt-[90px] mb-22 mr-75 absolute inset-0 flex items-center justify-center z-20">
+                  <div class="text-animation-2 text-[38px] xl:text-[56px] leading-none text-green font-medium">+</div>
+                </div>
+                <div class="mr-110 mb-28 absolute inset-0 flex items-center justify-center z-20">
+                  <div class="text-animation-3 text-[38px] xl:text-[56px] leading-none text-green font-medium">+</div>
+                </div>
+
+                <img
+                  decoding="async"
+                  class="lg:w-[38vw] xl:w-auto relative z-10"
+                  width="530"
+                  height="530"
+                  src="images/heart1.png"
+                  alt=""
+                />
+              </div>
+
+              <div class="relative xl:absolute xl:bottom-[7vw] sxl:bottom-[135px] right-[0] 2xl:right-[-44px]">
+                <p
+                  class="xl:pl-28 2xl:pl-10 text-[16px] sm:text-[20px] leading-tight level2-descr xl:max-w-[530px] 2xl:max-w-[500px] font-bold"
+                >
+                  Длительную защиту слизистой пищевода благодаря наличию дополнительного компонента «Полоксамер 407» с
+                  высокой способностью к биоадгезии
+                </p>
+                <img decoding="async" class="hidden xl:block" src="images/line2.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="js-fixed-scale hidden lg:block">
+        <div class="intersect-media max-w-[1700px] mx-auto relative z-10">
+          <div class="absolute inset-0 blur-[250px] bg-violet"></div>
+          <object class="relative" id="svg-media" type="image/svg+xml" data="images/svg-media-object2.svg"></object>
+        </div>
+      </div>
+      <div
+        class="max-w-lg mx-auto flex justify-center items-center lg:hidden intersect-media-mobile relative z-10 px-4 mb-5"
+      >
+        <object
+          id="svg-media-mobile"
+          class="w-full h-auto"
+          type="image/svg+xml"
+          data="images/svg-media-object-mobile2.svg?s=1"
+        ></object>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="js-fixed-scale relative -z-10">
+        <div class="max-w-[1480px] mx-auto px-4 relative">
+          <div class="absolute top-0 sm:top-[-150px]">
+            <img decoding="async" src="images/map.svg" alt="" />
+          </div>
+          <div
+            class="xl:pl-[130px] sm:pt-5 lg:pt-[80px] xl:pt-[165px] relative flex-col items-center md:items-start flex md:flex-row gap-8"
+          >
+            <div class="shrink-0 relative">
+              <div class="absolute inset-0 font-bold flex flex-col items-center justify-center">
+                <div
+                  class="contain-paint text-color-animation text-[150px] sm:text-[188px] leading-none drop-shadow-2xl relative bottom-2 sm:bottom-4"
+                >
+                  A
+                </div>
+                <div class="text-[20px] leading-none text-brown drop-shadow-lg relative bottom-6 sm:bottom-8">
+                  Рекомендация
+                </div>
+              </div>
+              <img decoding="async" src="images/circle-map.png" width="358" height="358" alt="" />
+            </div>
+            <div class="md:mt-24">
+              <p class="max-w-[700px] text-[18px] sm:text-[26px] xl:text-[30px] leading-tight font-medium">
+                Применение Альфазокса у больных с ГЭРБ рекомендовано Российской гастроэнтерологической ассоциацией с
+                уровнем убедительности рекомендаций А и уровнем доказательности данных 1.
+              </p>
+
+              <div class="mt-5 sm:mt-[56px] px-4 sm:px-8 max-w-4xl">
+                <div
+                  class="-skew-x-3 lg:-skew-x-12 bg-white text-brown text-[18px] lg:text-[20px] font-medium leading-none rounded-3xl"
+                >
+                  <p class="backdrop-blur-1px-small skew-x-3 lg:skew-x-12 mx-5 py-4 sm:mx-8 sm:py-8">
+                    Лечение ИПП в комбинации с эзофагопротекторами может помочь избавиться от симптомов ГЭРБ и
+                    восстановить слизистую оболочку пищевода. А это обязательное условие для длительной ремиссии
+                    заболевания.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="js-fixed-scale">
+      <div
+        class="mt-[60px] lg:mt-[150px] max-w-[970px] px-4 mx-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-8"
+      >
+        <div class="shrink-0 relative">
+          <div class="absolute inset-0 blur-[50px] bg-violet"></div>
+          <svg
+            class="relative"
+            width="90"
+            height="90"
+            viewBox="0 0 90 90"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M87.75 45c0 24.853-17.897 42.75-42.75 42.75S2.25 69.853 2.25 45 20.147 2.25 45 2.25 87.75 20.147 87.75 45Z"
+              stroke="#fff"
+              stroke-width="3"
+            />
+            <path
+              d="M34.146 56.855c-2.959 0-8.875 2.958-8.875 10.354M54.854 56.855c2.959 0 8.875 2.958 8.875 10.354M50.417 56.855l-5.38 6.454m-2.016 2.42 2.017-2.42m-6.455-6.454 6.455 6.454M34.146 27.27c-4.438 2.959-8.875 18.638 2.958 22.188M54.854 27.27c4.438 2.959 8.875 18.638-2.958 22.188"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M35.992 39.105c-.239.937-.367 1.93-.367 2.958 0 5.718 3.974 11.833 8.875 11.833s8.875-6.115 8.875-11.833c0-1.028-.128-2.021-.367-2.959M47.458 33.188c-1.3 1.3-4.888 4.888-12.774 5.735"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M45.98 36.145c1.478 1.48 2.958 2.959 7.395 2.959"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M56.183 22.25a.297.297 0 0 0-.11-.407 23.666 23.666 0 0 0-23.145 0 .297.297 0 0 0-.111.408l4.664 8.08a.305.305 0 0 0 .412.112 13.737 13.737 0 0 1 13.214 0c.145.08.329.03.412-.113l4.664-8.08Z"
+              stroke="#fff"
+              stroke-width="2"
+            />
+            <path d="M33.406 62.031v4.438m-2.218-2.219h4.437" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <p class="text-[18px] sm:text-[22px] lg:text-[30px] font-bold leading-tight">
+          Альфазокс — основа терапии ГЭРБ вместе с ИПП, что позволяет изменить естественное течение заболевания ГЭРБ.
+        </p>
+      </div>
+    </div>
+
+    <div class="js-fixed-scale">
+      <div id="page-spec" class="mt-[80px] md:mt-[150px] max-w-4xl mx-auto px-4 relative">
+        <h2 class="text-[24px] md:text-[40px] leading-none font-bold text-center">
+          Практическое применение для разных специальностей
+        </h2>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="js-fixed-scale">
+        <div class="js-list-practice mt-[25px] md:mt-[56px] max-w-[1300px] mx-auto px-4">
+          <div class="contain-layout grid grid-cols-1 lg:grid-cols-3 gap-y-6 sm:gap-y-8">
+            <div
+              class="contain-layout opacity-0 duration-500 transition-opacity relative z-[3] py-5 px-4 sm:py-9 w-full text-brown clip-polygon h-full bg-white text-[20px] sm:text-[26px] xl:text-[30px] leading-none font-bold flex flex-col rounded-xl lg:rounded-none"
+            >
+              <p class="text-center lg:min-h-[60px]">Гастроэнтерологи:</p>
+              <div class="mt-10 md:mt-20 md:px-5 text-[16px] sm:text-[20px] leading-none font-medium">
+                ● терапия НЭРБ, эрозивный ГЭРБ, ГЭРБ с внепищеводными проявлениями, пищевод Барретта
+              </div>
+            </div>
+            <div
+              class="contain-layout opacity-0 delay-300 duration-700 transition-opacity relative z-[2] fix-w py-5 px-4 sm:py-9 w-full text-brown clip-polygon h-full bg-yellow text-[20px] sm:text-[26px] xl:text-[30px] leading-none font-bold flex flex-col rounded-xl lg:rounded-none"
+            >
+              <p class="text-center">Врачи общей практики (терапевты):</p>
+              <div class="mt-10 md:mt-20 md:px-5 text-[16px] sm:text-[20px] leading-none font-medium">
+                ● подозрения на ГЭРБ, НЭРБ, ГЭРБ с внепищеводными проявлениями, защита слизистой оболочки пищевода в
+                период отмены ИПП
+              </div>
+            </div>
+            <div
+              class="contain-layout opacity-0 delay-500 duration-[1500ms] transition-opacity relative z-[1] fix-w py-5 px-4 sm:py-9 w-full clip-polygon h-full bg-violet-2 text-[20px] sm:text-[26px] xl:text-[30px] leading-none font-bold flex flex-col rounded-xl lg:rounded-none"
+            >
+              <p class="text-center">Оториноларингологи (ЛОР):</p>
+              <div class="mt-10 md:mt-20 md:px-5 text-[16px] sm:text-[20px] leading-none font-medium">
+                ● пациенты с внепищеводными проявлениями ГЭРБ, такими как хронический кашель, астма, ларингит и пр.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="js-fixed-scale">
+        <div class="mt-[80px] lg:mt-[150px] max-w-[1566px] mx-auto px-4 sm:px-16 relative z-10">
+          <div class="absolute inset-0 blur-[250px] bg-violet"></div>
+          <div class="sm:-skew-x-3 lg:-skew-x-12 bg-white text-brown rounded-3xl relative">
+            <div class="sm:skew-x-3 lg:skew-x-12 py-8 px-5 sm:px-0 sm:mx-16 sm:py-10">
+              <p class="text-[20px] sm:text-[24px] lg:text-[26px] xl:text-[30px] leading-none font-medium text-center">
+                Альфазокс принимают <span class="italic">по 1 пакетику-саше</span> после основных приемов пищи и на
+                ночь, как правило, 4 раза в сутки. Необходимо принимать не ранее чем через 30 мин после еды. После
+                приема Альфазокса в течение 2 часов рекомендуется не пить и не принимать пищу <sup>3</sup>.
+              </p>
+              <h2 class="mt-8 text-center text-[24px] sm:text-[32px] lg:text-[40px] leading-none font-bold">
+                Принимать 4 раза в сутки
+              </h2>
+              <div class="mt-8 max-w-[1050px] mx-auto">
+                <div class="flex flex-col gap-3 md:gap-0 items-start md:items-center md:flex-row md:justify-between">
+                  <div class="flex items-center">
+                    <img decoding="async" class="mr-4" src="images/DonutBitten.svg" alt="" />
+                    <p class="block md:hidden text-brown text-opacity-60 text-[16px] font-bold">После еды</p>
+                  </div>
+                  <div
+                    class="w-full md:w-[42%] rounded-r-2xl md:rounded-r-none rounded-l-2xl bg-gr-11 text-[24px] lg:text-[30px] leading-none font-bold text-center px-4 py-2 flex items-center justify-center"
+                  >
+                    30 минут
+                  </div>
+                  <div class="flex items-center">
+                    <img decoding="async" class="mr-3 md:mr-0 md:px-5" src="images/icon1.svg" alt="" />
+                    <p class="block md:hidden text-brown text-[16px] font-bold">Прием 1 саше Альфазокс</p>
+                  </div>
+                  <div
+                    class="w-full md:w-[42%] rounded-l-2xl md:rounded-l-none rounded-r-2xl bg-gr-22 text-white text-[24px] lg:text-[30px] leading-none font-bold text-center px-4 py-2 flex items-center justify-center"
+                  >
+                    2 часа <sup>1</sup>
+                  </div>
+                  <p class="block md:hidden text-brown text-opacity-60 text-[16px] font-bold">
+                    Воздержаться от приема пищи
+                  </p>
+                </div>
+                <div
+                  class="hidden mt-4 md:flex justify-between text-[14px] lg:text-[20px] font-bold leading-tight gap-1"
+                >
+                  <p class="text-brown text-opacity-60 w-[62px]">После еды</p>
+                  <p class="relative left-[80px] text-brown w-[140px] text-center">Прием 1 саше Альфазокс</p>
+                  <p class="text-brown text-opacity-60 w-[155px] text-right">Воздержаться от приема пищи</p>
+                </div>
+              </div>
+            </div>
+            <img class="absolute water-bubbles water-bubbles-left" src="./images/water-bubbles1.png" alt="">
+            <img class="absolute water-bubbles water-bubbles-right" src="./images/water-bubbles2.png" alt="">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="quest-page" class="relative js-fixed-scale">
+      <div class="mt-[70px] lg:mt-[140px] max-w-5xl px-4 mx-auto flex items-center relative">
+        <div class="absolute inset-0 blur-[250px] bg-violet"></div>
+
+        <div class="relative">
+          <div
+            class="relative z-20 text-center md:text-left text-[28px] md:text-[36px] lg:text-[50px] leading-none font-bold"
+          >
+            Остались вопросы?
+          </div>
+          <p
+            class="relative z-20 text-center md:text-left mt-4 text-[20px] md:text-[24px] lg:text-[30px] leading-none font-medium lg:w-[120%]"
+          >
+            Ознакомьтесь с актуальными материалами по диагностике и ведению пациентов с ГЭРБ.
+          </p>
+        </div>
+        <div class="hidden md:block w-[400px] lg:w-[600px] shrink-0 relative">
+          <div
+            class="absolute right-16 top-20 lg:right-28 lg:top-28 w-20 h-20 lg:w-[103px] lg:h-[103px] rounded-full border-4 border-pinki bg-white flex items-center justify-center"
+          >
+            <svg
+              class="opacity-animation transition-opacity h-12 lg:h-[62px]"
+              viewBox="0 0 44 62"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.439 18.8c0-1.585-.355-2.924-1.066-4.017-.71-1.148-1.777-2.023-3.198-2.624-1.367-.602-3.007-.902-4.92-.902-2.515 0-4.92.628-7.216 1.886-2.296 1.202-4.21 2.952-5.74 5.248L.935 11.503c1.913-2.242 3.963-4.155 6.15-5.74a24.816 24.816 0 0 1 7.216-3.608C16.925 1.28 19.85.843 23.075.843c2.679 0 5.248.41 7.708 1.23 2.515.765 4.756 1.94 6.724 3.526a16.753 16.753 0 0 1 4.674 5.658c1.203 2.186 1.804 4.701 1.804 7.544 0 3.334-.875 6.232-2.624 8.692-1.695 2.46-3.881 4.455-6.56 5.986a26.373 26.373 0 0 1-8.446 2.952l-.328 6.888H16.023l-1.64-14.596h2.624c3.28 0 5.986-.52 8.118-1.558 2.132-1.094 3.717-2.406 4.756-3.936 1.039-1.53 1.558-3.007 1.558-4.428ZM13.317 54.964c0-1.804.738-3.39 2.214-4.756 1.476-1.367 3.307-2.05 5.494-2.05 2.296 0 4.155.683 5.576 2.05 1.476 1.366 2.214 2.952 2.214 4.756 0 1.858-.738 3.471-2.214 4.838-1.421 1.312-3.28 1.968-5.576 1.968-2.187 0-4.018-.656-5.494-1.968-1.476-1.367-2.214-2.98-2.214-4.838Z"
+                fill="#E45772"
+              />
+            </svg>
+          </div>
+          <img decoding="async" src="images/human-circle.png" width="600" height="482" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="js-fixed-scale">
+        <div
+          class="mt-10 md:mt-0 max-w-[1242px] px-4 mx-auto grid grid-cols-1 xm:grid-cols-2 xl:grid-cols-3 gap-5 relative"
+        >
+
+          <div class="p-5 flex flex-col bg-white rounded-3xl">
+            <img decoding="async" src="images/quest-image1.png" class="w-full" width="350" height="177" alt="" />
+            <div class="mt-4 sm:min-h-[120px] grow">
+              <h2 class="text-[18px] xl:text-[20px] leading-tight text-brown font-semibold">
+                Комбинированная терапия ГЭРБ:
+                <span class="text-[16px] xl:text-[18px] text-brown text-opacity-40">проблемы и пути их решения</span>
+              </h2>
+            </div>
+            <a href="https://эзофагопротектор.рф/articles/open/?ID=190" target="_blank" class="js-ga4-link mt-5 sm:mt-2 text-left custom-color1 text-[18px] leading-none font-semibold cursor"  data-gatitle="Подробнее Бордин Д.С.">
+              Подробнее
+            </a>
+          </div>
+          <div class="p-5 flex flex-col bg-white rounded-3xl">
+            <img decoding="async" src="images/quest-image2.png" class="w-full" width="350" height="177" alt="" />
+            <div class="mt-4 sm:min-h-[120px] grow">
+              <h2 class="text-[18px] xl:text-[20px] leading-tight text-brown font-semibold">
+                Терапия ГЭРБ с внепищеводными симптомами:
+                <span class="text-[16px] xl:text-[18px] text-brown text-opacity-40"
+                  >особенности, трудности и решения</span
+                >
+              </h2>
+            </div>
+            <a href="https://эзофагопротектор.рф/articles/open/?ID=238" target="_blank" class="js-ga4-link mt-5 sm:mt-2 text-left custom-color1 text-[18px] leading-none font-semibold cursor" data-gatitle="Подробнее Ливзан М.А">
+              Подробнее
+            </a>
+          </div>
+          <div class="p-5 flex flex-col bg-white rounded-3xl">
+            <img decoding="async" src="images/quest-image3.png" class="w-full" width="350" height="177" alt="" />
+            <div class="mt-4 sm:min-h-[120px] grow">
+              <h2 class="text-[18px] xl:text-[20px] leading-tight text-brown font-semibold">
+                Лечение ГЭРБ у детей и подростков, эффективность эзофагопротекторов: 
+                <span class="text-[16px] xl:text-[18px] text-brown text-opacity-40"
+                  >результаты исследования</span
+                >
+              </h2>
+            </div>
+            <a href="https://эзофагопротектор.рф/articles/open/?ID=242" target="_blank" class="js-ga4-link mt-5 sm:mt-2 text-left custom-color1 text-[18px] leading-none font-semibold cursor" data-gatitle="Подробнее Шумилов П.В.">
+              Подробнее
+            </a>
+          </div>
+          <div class="p-5 flex flex-col bg-white rounded-3xl">
+            <img decoding="async" src="images/quest-image4.png" class="w-full" width="350" height="177" alt="" />
+            <div class="mt-4 sm:min-h-[120px] grow">
+              <h2 class="text-[18px] xl:text-[20px] leading-tight text-brown font-semibold">
+                Эзофагопротекция при отмене ИПП у пациентов с пищеводом Барретта
+              </h2>
+            </div>
+            <a href="https://эзофагопротектор.рф/articles/open/?ID=258" target="_blank" class="js-ga4-link mt-5 sm:mt-2 text-left custom-color1 text-[18px] leading-none font-semibold cursor" data-gatitle="Подробнее Кучерявый Ю.А.">
+              Подробнее
+            </a>
+          </div>
+          <div class="p-5 flex flex-col bg-white rounded-3xl">
+            <img decoding="async" src="images/quest-image5.png" class="w-full" width="350" height="177" alt="" />
+            <div class="mt-4 sm:min-h-[120px] grow">
+              <h2 class="text-[18px] xl:text-[20px] leading-tight text-brown font-semibold">
+                Терапия НЭРБ при частичном или ограниченном ответе на терапию ИПП
+              </h2>
+            </div>
+            <a href="https://эзофагопротектор.рф/articles/open/?ID=22" target="_blank" class="js-ga4-link mt-5 sm:mt-2 text-left custom-color1 text-[18px] leading-none font-semibold cursor" data-gatitle="Подробнее Carmelo Scarpignato">
+              Подробнее
+            </a>
+          </div>
+          <div class="p-5 flex flex-col bg-white rounded-3xl">
+            <img decoding="async" src="images/quest-image6.png" class="w-full" width="350" height="177" alt="" />
+            <div class="mt-4 sm:min-h-[120px] grow">
+              <h2 class="text-[18px] xl:text-[20px] leading-tight text-brown font-semibold">
+                Как распознать и лечить редкую форму эзофагита:
+                <span class="text-[16px] xl:text-[18px] text-brown text-opacity-40">клинический случай</span>
+              </h2>
+            </div>
+            <a href="https://эзофагопротектор.рф/articles/open/?ID=256" target="_blank" class="js-ga4-link mt-5 sm:mt-2 text-left custom-color1 text-[18px] leading-none font-semibold cursor" data-gatitle="Подробнее Бакулина Н.В.">
+              Подробнее
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="js-fixed-scale relative z-10">
+      <div id="video-page" class="max-w-[1400px] mt-[70px] md:mt-[138px] px-4 mx-auto">
+
+        <div class="max-w-[1145px] mx-auto relative z-10">
+          <h2 class="text-[28px] lg:text-[40px] leading-none font-bold text-center">Видеоматериалы</h2>
+          <div class="mt-8 sm:mt-[77px] sm:grid grid-cols-12 gap-5 lg:gap-14">
+            <div
+              class="col-span-5 text-[14px] sm:text-[16px] lg:text-[20px] leading-tight flex flex-row flex-wrap sm:flex-nowrap sm:flex-col gap-1 sm:gap-6"
+            >
+              <button
+                data-video-index="video-1"  data-gatitle="Как изменилось представление о ГЭРБ+"
+                class="js-ga4-link sm:min-h-[78px] tracking-wide video-btn video-btn--first video-btn--active text-left py-2.5 px-2.5 sm:py-4 sm:px-4 lg:px-8 underline font-semibold rounded-md sm:rounded-xl"
+              >
+                Как изменились представления о ГЭРБ за последние 15 лет?
+              </button>
+              <button
+                data-video-index="video-2" data-gatitle="Факты и фэйки про ГЭРБ+"
+                class="js-ga4-link sm:min-h-[78px] tracking-wide video-btn text-left py-2.5 px-2.5 sm:py-4 sm:px-4 lg:px-8 underline font-semibold rounded-md sm:rounded-xl"
+              >
+                Факты и фейки про ГЭРБ
+              </button>
+              <button
+                data-video-index="video-3" data-gatitle="Нужна ли эзофагопротекция+"
+                class="js-ga4-link sm:min-h-[78px] tracking-wide video-btn text-left py-2.5 px-2.5 sm:py-4 sm:px-4 lg:px-8 underline font-semibold rounded-md sm:rounded-xl"
+              >
+                Нужна ли эзофагопротекция при лечении ГЭРБ?
+              </button>
+              <button
+                data-video-index="video-4" data-gatitle="Когда необходима комбинированная терапия ГЭРБ+"
+                class="js-ga4-link sm:min-h-[78px] tracking-wide video-btn text-left py-2.5 px-2.5 sm:py-4 sm:px-4 lg:px-8 underline font-semibold rounded-md sm:rounded-xl"
+              >
+                Когда необходима комбинированная терапия ГЭРБ?
+              </button>
+              <button
+                data-video-index="video-5" data-gatitle="Опыт защиты слизистой оболочки+"
+                class="js-ga4-link sm:min-h-[78px] tracking-wide video-btn text-left py-2.5 px-2.5 sm:py-4 sm:px-4 lg:px-8 underline font-semibold rounded-md sm:rounded-xl"
+              >
+                Опыт защиты слизистой оболочки в лечении эрозивного эзофагита
+              </button>
+            </div>
+            <div class="mt-7 sm:mt-0 col-span-7">
+              <div id="video-1" class="block video-first content-visibility">
+                <div class="relative rounded-xl overflow-auto">
+                  <iframe id="XtZ4yXJ9UJc" class="w-full aspect-video rounded-lg shadow-lg" frameborder="0" allowfullscreen="" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/XtZ4yXJ9UJc?rel=0&amp;showinfo=0&amp;autoplay=1"></iframe>
+                </div>
+
+                <div class="mt-4 sm:mt-9 text-[14px] sm:text-[16px] lg:text-[20px] font-semibold">
+                  <p class="underline">Ильчишина Т.А.</p>
+                  <p class="text-white text-opacity-50 font-normal">
+                    к.м.н., ведущий гастроэнтеролог-гепатолог СМ-клиники
+                  </p>
+                  <p class="mt-2">
+                    Ведущий гастроэнтеролог-гепатолог СМ-клиники, к.м.н., Ильчишина Т.А. рассказывает о нерешенных
+                    вопросах и сложностях в терапии ГЭРБ, об осложнениях гастроэзовагеальной рефлюксной болезни, о
+                    важности защиты слизистой оболочки пищевода при данном заболевании.
+                  </p>
+                </div>
+              </div>
+              <div id="video-2" class="hidden content-visibility">
+                <div class="relative rounded-xl overflow-auto">
+                  <iframe id="2kRGTTkqXrE" class="w-full aspect-video rounded-lg shadow-lg" frameborder="0" allowfullscreen="" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/2kRGTTkqXrE?rel=0&amp;showinfo=0&amp;autoplay=1"></iframe>
+                </div>
+                <div class="mt-4 sm:mt-9 text-[14px] sm:text-[16px] lg:text-[20px] font-semibold">
+                  <p class="underline">Ильчишина Т.А.</p>
+                  <p class="text-white text-opacity-50 font-normal">
+                    к.м.н., ведущий гастроэнтеролог-гепатолог СМ-клиники
+                  </p>
+                  <p class="underline">Кучерявый Ю.А.</p>
+                  <p class="text-white text-opacity-50 font-normal">
+                    к.м.н., доцент кафедры пропедевтики внутренних болезней и гастроэнтерологии ФГБОУ ВО МГМСУ им.А.И.
+                    Евдокимова Минздрава РФ, главный гастроэнтеролог Центральной дирекции здравоохранения ОАО «РЖД»
+                  </p>
+                  <p class="mt-2">
+                    Главный гастроэнтеролог ОАО РЖД, доцент кафедры пропедевтики внутренних болезней и гастроэнтерологии
+                    МГМСУ им. А. И. Евдокимова Минздрава РФ, к.м.н., Кучерявый Ю.А. и ведущий гастроэнтеролог-гепатолог
+                    СМ-клиники, к.м.н., Ильчишина Т.А., в рамках вебинара рассматривают различные вопросы диагностики и
+                    подходов к терапии гастроэзофагеальной рефлюксной болезни, рассматривают факторы, приводящие к
+                    осложнениям заболевания, об особенностях стандартной терапии ГЭРБ, развенчиваются мифы о данном
+                    заболевании.
+                  </p>
+                </div>
+              </div>
+
+              <div id="video-3" class="hidden content-visibility">
+                <div class="relative rounded-xl overflow-auto">
+                  <iframe id="9lPQtCQMjMg" class="w-full aspect-video rounded-lg shadow-lg" frameborder="0" allowfullscreen="" allow="accelerometer; encrypted-media;gyroscope; picture-in-picture" src="https://www.youtube.com/embed/9lPQtCQMjMg?rel=0&amp;showinfo=0&amp;autoplay=1"></iframe>
+                </div>
+                <div class="mt-4 sm:mt-9 text-[14px] sm:text-[16px] lg:text-[20px] font-semibold">
+                  <p class="underline">Бордин Д.С.</p>
+                  <p class="text-white text-opacity-50 font-normal">
+                    Главный гастроэнтеролог ДЗ г.Москвы, Руководитель отдела патологии поджелудочной железы, желчных
+                    путей и верхних отделов пищеварительного тракта НПЦ им. Логинова, д.м.н., проф.
+                  </p>
+
+                  <p class="mt-2">
+                    Дмитрий Станиславович Бордин в своем докладе «Нужна ли эзофагопротекция при лечении ГЭРБ?» рассказал
+                    о результатах рандомизированного клинического исследования, проведенного на базе МКНЦ им. А.С.
+                    Логинова, в котором была оценена эффективность комбинированной терапии ИПП и Альфазокса у больных с
+                    эрозивным рефлюкс-эзофагитом.
+                  </p>
+                </div>
+              </div>
+
+              <div id="video-4" class="hidden content-visibility">
+                <div class="relative rounded-xl overflow-auto">
+                  <iframe id="69PrHdA05sE" class="w-full aspect-video rounded-lg shadow-lg" frameborder="0" allowfullscreen="" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/69PrHdA05sE?rel=0&amp;showinfo=0&amp;autoplay=1"></iframe>
+                </div>
+                <div class="mt-4 sm:mt-9 text-[14px] sm:text-[16px] lg:text-[20px] font-semibold">
+                  <p class="underline">Кучерявый Ю.А.</p>
+                  <p class="text-white text-opacity-50 font-normal">
+                    к.м.н., доцент кафедры пропедевтики внутренних болезней и гастроэнтерологии ФГБОУ ВО МГМСУ им.А.И.
+                    Евдокимова Минздрава РФ, главный гастроэнтеролог Центральной дирекции здравоохранения ОАО «РЖД»
+                  </p>
+
+                  <p class="mt-2">
+                    Главный гастроэнтеролог ОАО РЖД, доцент кафедры пропедевтики внутренних болезней и гастроэнтерологии
+                    МГМСУ им. А. И. Евдокимова Минздрава РФ, к.м.н., Кучерявый Ю.А. представляет разбор клинического
+                    случая пациента с эрозивным эзофагитом с подозрением на пищевод Баррета, рассказывает об
+                    особенностях течения ГЭРБ, о текущих проблемах в терапии ГЭРБ, о тех показаниях, при которых
+                    рекомендована комбинированная терапия с применением эзофагопротектора, высказывает свое мнение о
+                    преимуществах применения эзофагопротектора при эрозивном ГЭРБ.
+                  </p>
+                </div>
+              </div>
+
+              <div id="video-5" class="hidden content-visibility">
+                <div class="relative rounded-xl overflow-auto">
+                  <iframe id="giYvHs7QqEo" class="w-full aspect-video rounded-lg shadow-lg" frameborder="0" allowfullscreen="" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/giYvHs7QqEo?rel=0&amp;showinfo=0&amp;autoplay=1"></iframe>
+                </div>
+                <div class="mt-4 sm:mt-9 text-[14px] sm:text-[16px] lg:text-[20px] font-semibold">
+                  <p class="underline">Ливзан М.А</p>
+                  <p class="text-white text-opacity-50 font-normal">
+                    Д.м.н., профессор, ректор, заведующий кафедрой Факультетской терапии и гастроэнтерологии ФГБОУ
+                    высшего образования «Омский государственный медицинский университет» МЗ РФ
+                  </p>
+
+                  <p class="mt-2">
+                    Профессор, ректор «Омского ГМУ» Ливзан М.А. остановится на вопросах морфологических изменений
+                    слизистой оболочки пищевода под влиянием кислого или желчного рефлюкса при ГЭРБ. А также расскажет о
+                    роли эзофагопротекции в достижении эндоскопической и гистологической ремиссии в терапии эрозивной
+                    ГЭРБ
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="js-fixed-scale relative z-10">
+      <div class="mt-[60px] sm:mt-[80px] lg:mt-[130px] max-w-[1500px] mx-auto px-4">
+        <h2 class="font-semibold underline text-[16px] sm:text-[20px]">Список сокращений:</h2>
+        <div
+          class="mt-7 md:mt-[50px] text-[14px] leading-snug sm:text-[16px] md:text-[20px] sm:leading-[31px] font-medium text-white text-opacity-70"
+        >
+          <p>ГЭРБ – гастроэзофагорефлюксная болезнь</p>
+          <p>НЭРБ – неэрозивная рефлюксная болезнь</p>
+          <p>ИПП – ингибиторы протонной помпы</p>
+        </div>
+      </div>
+
+      <div class="mt-7 md:mt-[58px] max-w-[1500px] mx-auto px-4 relative z-10">
+        <button class="js-ga4-link js-book-btn flex gap-3 items-center"  data-gatitle="Список литературы">
+          <span class="font-semibold underline text-[16px] sm:text-[20px]">Список литературы</span>
+          <svg
+            class="shrink-0 w-8 h-8 transition-transform"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </button>
+
+        <div class="js-book-content hidden mt-7 md:mt-[50px] max-w-[980px]">
+          <ol
+            class="pl-5 list-decimal text-[14px] leading-snug sm:text-[16px] md:text-[20px] sm:leading-[31px] font-medium text-white text-opacity-70"
+          >
+            <li>
+              Бакулина Н. В., Тихонов С. В., Лищук Н. Б. Альфазокс — инновационное медицинское изделие с доказанным
+              эзофагопротективным потенциалом // Гастроэнтерология. Хирургия. Интенсивная терапия. Consilium Medicum.
+              2019. № 2. С. 17–23.
+            </li>
+            <li>
+              Ивашкин В. Т. и соавт. Рекомендации Российской гастроэнтерологической ассоциации по диагностике и лечению
+              гастроэзофагеальной рефлюксной болезни // Российский журнал гастроэнтерологии, гепатологии,
+              колопроктологии. 2020. № 30 (4). С. 70–97.
+            </li>
+            <li>
+              Маев И. В. Болезни пищевода / Маев И. В., Бусарова Г. А., Андреев Д. Н. — М.: ГЭТАР-Медиа, 2019. — 648 с.
+            </li>
+            <li>https://medvestnik.ru/content/articles/Alfazoks-poluchil-Platinovuu-unciu.html</li>
+            <li>
+              Внепищеводные маски гастроэзофагеальной рефлюксной болезни / О. И. Костюкевич, А. К. Рылова, Н. В.
+            </li>
+          </ol>
+        </div>
+
+        <div class="mt-10 sm:mt-20 md:mt-[130px] text-[16px] sm:text-[20px] leading-[31px] font-medium">
+          <a href="https://эзофагопротектор.рф/" target="_blank" class="js-ga4-link underline"  data-gatitle="Официальный сайт Альфазокс">Официальный сайт Альфазокс</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-8 py-11 bg-dark-violet relative z-10">
+      <div class="js-fixed-scale">
+        <div
+          class="max-w-[1500px] mx-auto px-4 flex flex-wrap justify-between gap-5 mxl:gap-0 mxl:justify-normal text-[14px] sm:text-[16px] lg:text-[20px] leading-[26px] sm:leading-[31px] items-start lg:items-end font-medium"
+        >
+          <img
+            decoding="async"
+            loading="lazy"
+            class="w-[250px] lg:w-[300px] xl:w-auto mxl:mr-6"
+            src="images/logo-footer.png"
+            alt=""
+          />
+          <div class="mxl:mr-28">
+            <p class="text-white text-opacity-50">ООО «Альфасигма Рус»</p>
+            <p class="mt-2 lg:mt-4">
+              115054, г. Москва, <br />
+              Павелецкая площадь, д.2, стр.2, этаж 10
+            </p>
+          </div>
+          <div>
+            <p>Тел: <a href="tel:+74951500123">+7 (495) 150-01-23</a></p>
+            <p>E-mail: <a href="mailto:info.ru@alfasigma.com" class="underline">info.ru@alfasigma.com</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- </article> -->
+
+    <script src="js/vivus.min.js"></script>
+    <script src="js/smoothscroll.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
